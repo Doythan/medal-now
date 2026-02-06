@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    // Google Search Console verification 추가 시 사용
-    // google: 'your-verification-code',
+    // Google Search Console verification
+    google: 'A2i7lFfb16fMiTNXSGA_J2rOaCUTxw78SysJw6BCxuM',
     // Naver Search Advisor verification 추가 시 사용
     // naver: 'your-naver-verification-code',
   },
