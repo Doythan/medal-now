@@ -4,11 +4,12 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StructuredData from "@/components/seo/StructuredData";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://medalnow.com'),
+  metadataBase: new URL('https://medal-now.pages.dev'),
   title: {
     default: "메달나우 | MedalNow - 2026 밀라노-코르티나 동계올림픽 실시간 정보",
     template: "%s | 메달나우"
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://medalnow.com',
+    url: 'https://medal-now.pages.dev',
     title: '메달나우 - 2026 밀라노-코르티나 동계올림픽',
     description: '2026 동계올림픽 실시간 메달 순위, 경기 일정, 한국 선수단 뉴스',
     siteName: '메달나우',
@@ -64,6 +65,14 @@ export const metadata: Metadata = {
   verification: {
     // Google Search Console verification 추가 시 사용
     // google: 'your-verification-code',
+    // Naver Search Advisor verification 추가 시 사용
+    // naver: 'your-naver-verification-code',
+  },
+  other: {
+    // Naver-specific meta tags
+    'naver-site-verification': '',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'black-translucent',
   },
 };
 
@@ -75,8 +84,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        <link rel="canonical" href="https://medalnow.com" />
+        <link rel="canonical" href="https://medal-now.pages.dev" />
         <meta name="google-adsense-account" content="ca-pub-4331098599610944" />
+        <link rel="alternate" type="application/rss+xml" title="메달나우 RSS Feed" href="https://medal-now.pages.dev/rss.xml" />
+        <meta name="theme-color" content="#FFD700" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={inter.className}>
         {/* Google Analytics */}
@@ -121,9 +133,14 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
+        {/* Structured Data - Organization & Website */}
+        <StructuredData type="organization" />
+        <StructuredData type="website" />
+        <StructuredData type="sportsEvent" />
+
         <div className="flex flex-col min-h-screen">
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-grow" id="main-content">{children}</main>
           <Footer />
         </div>
       </body>

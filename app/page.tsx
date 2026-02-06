@@ -1,4 +1,32 @@
+import type { Metadata } from "next";
 import MedalTable from "@/components/MedalTable";
+
+export const metadata: Metadata = {
+  title: "메달나우 - 2026 밀라노-코르티나 동계올림픽 실시간 메달 순위 및 경기 일정",
+  description: "2026 밀라노-코르티나 동계올림픽의 실시간 메달 순위, 경기 일정, 한국 선수단 소식을 실시간으로 확인하세요. 쇼트트랙, 피겨스케이팅, 스피드스케이팅 등 16개 종목 완벽 가이드.",
+  keywords: [
+    "2026 동계올림픽",
+    "밀라노 코르티나",
+    "올림픽 메달 순위",
+    "올림픽 실시간",
+    "경기 일정",
+    "한국 메달",
+    "차준환",
+    "김길리",
+    "쇼트트랙",
+    "피겨스케이팅",
+  ],
+  alternates: {
+    canonical: "https://medal-now.pages.dev",
+  },
+  openGraph: {
+    title: "메달나우 - 2026 동계올림픽 실시간 정보",
+    description: "실시간 메달 순위와 경기 일정을 한눈에 확인하세요",
+    url: "https://medal-now.pages.dev",
+    type: "website",
+    locale: "ko_KR",
+  },
+};
 
 export default function Home() {
   return (
