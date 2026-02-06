@@ -40,20 +40,53 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Legal & Info */}
           <div>
-            <h3 className="text-gold font-semibold mb-4">문의</h3>
-            <p className="text-gray-400 text-sm">
-              이메일: contact@medalnow.com
-            </p>
+            <h3 className="text-gold font-semibold mb-4">정보</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="/about" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  소개
+                </a>
+              </li>
+              <li>
+                <a href="/contact" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  문의하기
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  개인정보처리방침
+                </a>
+              </li>
+              <li>
+                <a href="/terms" className="text-gray-400 hover:text-gold transition-colors text-sm">
+                  이용약관
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-navy-800 mt-8 pt-8 text-center">
-          <p className="text-gray-500 text-sm">
-            &copy; {currentYear} 메달나우(MedalNow). All rights reserved.
-          </p>
+        <div className="border-t border-navy-800 mt-8 pt-8">
+          <div className="text-center mb-4">
+            <p className="text-gray-500 text-sm">
+              &copy; {currentYear} 메달나우(MedalNow). All rights reserved.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 text-xs text-gray-600">
+            <a href="/about" className="hover:text-gold transition-colors">소개</a>
+            <span>|</span>
+            <a href="/privacy" className="hover:text-gold transition-colors">개인정보처리방침</a>
+            <span>|</span>
+            <a href="/terms" className="hover:text-gold transition-colors">이용약관</a>
+            <span>|</span>
+            <a href="/contact" className="hover:text-gold transition-colors">문의</a>
+          </div>
+          <div className="text-center mt-4 text-xs text-gray-600">
+            <p>이메일: contact@medalnow.com</p>
+          </div>
         </div>
       </div>
     </footer>
