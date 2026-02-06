@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -75,9 +76,17 @@ export default function RootLayout({
     <html lang="ko">
       <head>
         <link rel="canonical" href="https://medalnow.com" />
-        <meta name="google-adsense-account" content="ca-pub-XXXXXXXXXX" />
+        <meta name="google-adsense-account" content="ca-pub-4331098599610944" />
       </head>
       <body className={inter.className}>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4331098599610944"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
         <div className="flex flex-col min-h-screen">
           <Header />
           <main className="flex-grow">{children}</main>
